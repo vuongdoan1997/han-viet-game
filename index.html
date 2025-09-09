@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hán Việt Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="setup">
+    <h1>Hán Việt Game – Setup</h1>
+    <div class="phrase-input">
+      <h3>Phrase 1:</h3>
+      <input type="text" id="phrase1" placeholder="Enter Vietnamese phrase">
+      <input type="text" id="noguess1" placeholder="No-Guess Letters (e.g. THIEN)">
+    </div>
+    <div class="phrase-input">
+      <h3>Phrase 2:</h3>
+      <input type="text" id="phrase2" placeholder="Enter Vietnamese phrase">
+      <input type="text" id="noguess2" placeholder="No-Guess Letters">
+    </div>
+    <div class="phrase-input">
+      <h3>Phrase 3:</h3>
+      <input type="text" id="phrase3" placeholder="Enter Vietnamese phrase">
+      <input type="text" id="noguess3" placeholder="No-Guess Letters">
+    </div>
+    <button id="continueBtn">Continue</button>
+  </div>
+
+  <div id="clan-selection" style="display:none;">
+    <h2>Clan Selection</h2>
+    <p>Assign Group (1–6, 0=inactive) &amp; Starting Points</p>
+    <div class="clan-input">
+      <h3>🐦 Chim Phượng</h3>
+      <label>Group:<input type="number" id="clan1-group" min="0" max="6" value="1"></label>
+      <label>Points:<input type="number" id="clan1-points" value="0"></label>
+    </div>
+    <div class="clan-input">
+      <h3>💀 Mộc Tinh</h3>
+      <label>Group:<input type="number" id="clan2-group" min="0" max="6" value="2"></label>
+      <label>Points:<input type="number" id="clan2-points" value="0"></label>
+    </div>
+    <div class="clan-input">
+      <h3>🐸 Cóc Tía</h3>
+      <label>Group:<input type="number" id="clan3-group" min="0" max="6" value="3"></label>
+      <label>Points:<input type="number" id="clan3-points" value="0"></label>
+    </div>
+    <div class="clan-input">
+      <h3>🐢 Rùa Vàng</h3>
+      <label>Group:<input type="number" id="clan4-group" min="0" max="6" value="4"></label>
+      <label>Points:<input type="number" id="clan4-points" value="0"></label>
+    </div>
+    <div class="clan-input">
+      <h3>🌊 Thuỷ Tinh</h3>
+      <label>Group:<input type="number" id="clan5-group" min="0" max="6" value="5"></label>
+      <label>Points:<input type="number" id="clan5-points" value="0"></label>
+    </div>
+    <div class="clan-input">
+      <h3>🧙 Thầy Tế</h3>
+      <label>Group:<input type="number" id="clan6-group" min="0" max="6" value="6"></label>
+      <label>Points:<input type="number" id="clan6-points" value="0"></label>
+    </div>
+    <button id="startGameBtn">Start Game</button>
+  </div>
+
+  <div id="main-game" style="display:none;">
+    <button id="backBtn">Back</button>
+    <div id="round-bar"></div>
+    <div id="top-bar"></div>
+    <div id="phrase-display"></div>
+    <div id="alphabet-bar"></div>
+    <div id="timer">20</div>
+    <div id="timer-controls">
+      <button id="startTimerBtn">Start</button>
+      <button id="stopTimerBtn">Stop</button>
+      <button id="resetTimerBtn">Reset</button>
+    </div>
+    <button id="nextClanBtn">Next Clan</button>
+  </div>
+
+  <div id="clan-console-overlay" style="display:none;">
+    <div id="clan-console">
+      <div id="clan-console-left"></div>
+      <div id="clan-console-right">
+        <button id="perkBtn">Perk</button>
+        <button id="pointsBtn">Points</button>
+        <button id="winBtn">Win</button>
+        <button id="closeConsoleBtn">Close</button>
+        <div id="pointsAdjustBox" style="display:none; margin-top:10px;">
+          <input type="number" id="pointsInput" style="width:80px">
+          <button id="pointsSaveBtn">Save</button>
+        </div>
+      </div>
+    </div>
+    <div id="ranking-table" style="display:none;"></div>
+  </div>
+
+  <div id="custom-prompt-overlay" style="display:none;">
+    <div id="custom-prompt-box">
+      <h4>Mộc Tinh: Đặt Bẫy</h4>
+      <p>Nhập một chữ cái để đặt bẫy. Các đội khác sẽ không thấy chữ bạn nhập.</p>
+      <input type="password" id="trapLetterInput" maxlength="1">
+      <div id="custom-prompt-buttons">
+        <button id="promptConfirmBtn">Đặt Bẫy</button>
+        <button id="promptCancelBtn">Hủy Bỏ</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
